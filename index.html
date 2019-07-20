@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>block_game</title>
+    <script src="program.js"></script>
+
+    <!-- 音声ファイルの読み込み-->
+    <audio id="kaiten" preload="auto">
+    <source src="oto/kaiten.mp3" type="audio/mp3"></audio>
+
+    <audio id="ochiru" preload="auto">
+    <source src="oto/ochiru.mp3" type="audio/mp3"></audio>
+
+    <audio id="don" preload="auto">
+    <source src="oto/don.mp3" type="audio/mp3"></audio>
+
+    <audio id="kieru" preload="auto">
+    <source src="oto/kieru.mp3" type="audio/mp3"></audio>
+
+    <audio id="zenbu" preload="auto">
+    <source src="oto/zenbu.mp3" type="audio/mp3"></audio>
+
+    <audio id="gameover" preload="auto">
+    <source src="oto/gameover.mp3" type="audio/mp3"></audio>
+
+  </head>
+
+  <!-- hajime関数を読み込む, キーボードが押された時の関数実行-->
+  <body onload="hajime()" onkeydown="ugokasu(event)">
+
+    <!-- タイトルとスコアを表示する-->
+    <div style="position:absolute; left:20px; top:10px">
+      <h1>Block_Game</h1>
+
+      <div style="width:380px;">
+        Score:<span id="tokuten">0</span>
+      </div>
+
+    <!-- ゲームの背景部分を作る-->
+    <canvas id="back" width="240" height="440" style="position:absolute; left:20px; top:150px; background-color:black"></canvas>
+
+　  <!-- ゲームのブロックを動かす画面を作る-->
+  　<canvas id="game" width="240" height="440" style="position:absolute; left:20px; top:150px; background-color:transparent"></canvas>
+
+    <!-- 次のブロックを表示する場所を作る-->
+    <canvas id="tsugi" width="80" height="80" style="position:absolute; left:300px; top:150px; background-color:black"></canvas>
+
+    <!-- ゲームスタートのボタンを付ける-->
+　　<button id="kaishibtn" style="position: absolute; left:300px; top:300px; width:80px; height:50px"
+     onclick="gamekaishi()">
+     ゲーム<br>スタート
+   </button>
+
+
+    </div>
+
+
+  </body>
+</html>
